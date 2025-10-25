@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PDF Compressor — Welcome</title>
-  <meta name="description" content="Welcome page for PDF Compressor Chrome extension." />
+  <title>PDF Compressor - Compress PDF Files Instantly</title>
+  <meta name="description" content="Compress PDF files instantly with our free Chrome extension. Reduce file size while maintaining quality. No file size limits, works offline." />
 
   <!-- Umami code -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="24f5e6fe-3038-49a9-a50f-7dc1986f6224"></script>
+  
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -22,10 +23,10 @@
 
   <style>
     :root{
-      --brand:#0A1625;      /* фирменный тёмный */
-      --body:#0b1623;       /* общий фон страницы */
-      --card-bg:#0f1d2e;    /* фон карточки */
-      --card-bg-2:#0c1a29;  /* нижний градиент карточки */
+      --brand:#0A1625;
+      --body:#0b1623;
+      --card-bg:#0f1d2e;
+      --card-bg-2:#0c1a29;
       --card-border:#12263c;
       --text-hero:#e6edf3;
       --text-muted:#cfe0ef;
@@ -43,105 +44,180 @@
       color:#dbe7f3;
     }
 
-    /* контейнер страницы */
     .wrap{
-      max-width: 1100px;
-      margin: 36px auto 32px;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* единая «панель»-карточка */
-    .panel{
+    .hero{
+      text-align: center;
+      padding: 60px 0 80px;
+    }
+
+    .hero h1{
+      font-size: clamp(36px, 6vw, 64px);
+      line-height:1.1; letter-spacing:-.02em;
+      margin:0 0 20px; font-weight: 800; color:#fff;
+      text-wrap: balance;
+    }
+
+    .hero p{
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--text-hero);
+      margin: 0 0 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button{
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      color: white;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .cta-button:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+    }
+
+    .features{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin: 80px 0;
+    }
+
+    .feature-card{
       background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px 28px 22px;
-    }
-
-    /* шапка внутри панели */
-    .panel__header{
-      text-align:center;
-      margin-bottom: 28px;
-    }
-    .panel__icon{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:72px; height:72px; border-radius:50%;
-      background:#0f2a44; border:1px solid #12314e; color:#7ceba3;
-      box-shadow: 0 4px 12px rgba(0,0,0,.25) inset;
-      margin: 4px auto 18px;
-    }
-    .panel__icon svg{ width:36px; height:36px; stroke: currentColor; }
-
-    .panel__header h1{
-      font-size: clamp(28px, 4.4vw, 44px);
-      line-height:1.15; letter-spacing:-.02em;
-      margin:0 0 12px; font-weight: 800; color:#fff;
-      text-wrap: balance;
-    }
-    .panel__header p{
-      margin:0; font-size: 17px; color: var(--text-hero);
-      opacity:.95;
-    }
-
-    /* секции внутри панели */
-    .panel__section + .panel__section{
-      margin-top: 28px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-    .panel__caption{
-      color: var(--text-muted);
-      font-size: clamp(16px, 2.1vw, 18px);
-      margin: 0 0 14px;
+      padding: 32px;
       text-align: center;
     }
-    .panel__media{
-      display:block; width:100%; height:auto;
-      border-radius: 12px;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-      /* Уменьшаем высоту изображений, чтобы показать часть второго экрана */
-      max-height: 60vh;
-      object-fit: cover;
-      object-position: top;
+
+    .feature-icon{
+      width: 64px;
+      height: 64px;
+      background: #0f2a44;
+      border: 1px solid #12314e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: #7ceba3;
+      font-size: 24px;
+    }
+
+    .feature-card h3{
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: #fff;
+    }
+
+    .feature-card p{
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .nav{
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .nav a{
+      color: var(--text-muted);
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover{
+      color: #fff;
     }
 
     footer{
       color: var(--muted);
       text-align:center;
       font-size: 13px;
-      padding: 20px 16px 40px;
+      padding: 40px 16px;
+      border-top: 1px solid var(--card-border);
+      margin-top: 80px;
     }
   </style>
 </head>
 <body>
 
   <main class="wrap">
-    <section class="panel" aria-label="Welcome and how-to">
-      <div class="panel__header">
-        <div class="panel__icon" aria-hidden="true">
-          <!-- зелёная «галочка» -->
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
-            <path d="M20 6L9 17l-5-5" />
-          </svg>
-        </div>
-        <h1>Thank you for installing PDF Compressor!</h1>
-        <p>To ensure we stay connected, click the Extensions icon at the top right of Chrome and pin 'PDF Compressor' to your toolbar.</p>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/install/">Install</a>
+    </nav>
+
+    <section class="hero">
+      <h1>PDF Compressor</h1>
+      <p>Compress PDF files instantly with our free Chrome extension. Reduce file size by up to 90% while maintaining quality. No file size limits, works offline.</p>
+      <a href="/install/" class="cta-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        Install Free Extension
+      </a>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Instant Compression</h3>
+        <p>Compress PDFs in seconds with our optimized algorithm. No waiting, no uploads to external servers.</p>
       </div>
 
-      <div class="panel__section">
-        <p class="panel__caption">Pin the extension to your toolbar</p>
-        <img class="panel__media" src="Landing_Screen_1_PDF Compressor.png" alt="Step 1 — pin PDF Compressor to the toolbar" />
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Privacy First</h3>
+        <p>All processing happens locally on your device. Your files never leave your computer - complete privacy guaranteed.</p>
       </div>
 
-      <div class="panel__section">
-        <p class="panel__caption">Now, click the 'PDF Compressor' icon whenever you need to instantly compress PDF files.</p>
-        <img class="panel__media" src="Landing_Screen_2_PDF Compressor.png" alt="Step 2 — click the PDF Compressor icon" />
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Easy to Use</h3>
+        <p>Simple drag-and-drop interface with batch processing. No technical knowledge required - just drop and compress.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Multiple Quality Levels</h3>
+        <p>Choose from different compression levels - from high quality to extreme compression based on your needs.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>No File Size Limits</h3>
+        <p>Compress files up to 150MB per file with no monthly limits. Perfect for large documents and presentations.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💾</div>
+        <h3>Works Offline</h3>
+        <p>No internet connection required. Download once and use anywhere, anytime. Perfect for remote work.</p>
       </div>
     </section>
   </main>
 
-  <footer>© 2025 PDF Compressor</footer>
+  <footer>© 2025 PDF Compressor - Compress PDF Files Instantly</footer>
 </body>
 </html>
