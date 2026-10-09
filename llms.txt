@@ -1,11 +1,10 @@
 # PDF Compressor
 
-> PDF Compressor is a free Chrome extension that compresses PDF files to reduce their size. Processing happens locally on the user's device; files are not uploaded to external servers.
+> PDF Compressor is a Chrome extension that compresses PDF files to reduce their size. Processing happens locally on the user's device; files are not uploaded to external servers.
 
 ## Key facts
 
 - Type: Chrome browser extension
-- Price: Free
 - Processing: Local, in the browser; works offline after installation
 - Interface: Drag-and-drop, with batch processing
 - Compression: Multiple quality levels, from high quality to extreme compression
@@ -15,3 +14,6 @@
 
 - [Website](https://compressor-pdf.com/): Product overview and features
 - [Install from the Chrome Web Store](https://chromewebstore.google.com/detail/pdf-compressor/pmkddnlhkeffkiomeijcancokeichgei): Official install page
+- [Guide](https://compressor-pdf.com/guide/): Step-by-step guide to compressing a PDF in Chrome without uploading it
+- [FAQ](https://compressor-pdf.com/faq/): Answers to common questions about file size limits, offline use, privacy, and compression levels
+- [Local vs. Upload](https://compressor-pdf.com/local-vs-upload/): Comparison of local (in-browser) processing vs. upload-based PDF compressors
