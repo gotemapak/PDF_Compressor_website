@@ -92,20 +92,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --brand:#0A1625;
-      --body:#0b1623;
-      --card-bg:#0f1d2e;
-      --card-bg-2:#0c1a29;
-      --card-border:#12263c;
-      --text-hero:#e6edf3;
-      --text-muted:#cfe0ef;
-      --muted:#9fb3c8;
-      --radius:18px;
-      --shadow:0 24px 60px rgba(0,0,0,.35), 0 3px 10px rgba(0,0,0,.25);
-    }
+  <link rel="stylesheet" href="/shared/base.css" />
 
+  <style>
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -121,60 +110,11 @@
       padding: 0 20px;
     }
 
-    .hero{
-      text-align: center;
-      padding: 60px 0 40px;
-    }
-
-    .hero h1{
-      font-size: clamp(32px, 5vw, 52px);
-      line-height:1.15; letter-spacing:-.02em;
-      margin:0 0 20px; font-weight: 800; color:#fff;
-      text-wrap: balance;
-    }
-
-    .hero p{
-      font-size: clamp(17px, 2.2vw, 21px);
-      color: var(--text-hero);
-      margin: 0 0 30px;
-      max-width: 680px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-button{
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-      color: white;
-      text-decoration: none;
-      padding: 16px 32px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 18px;
-      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
-      transition: all 0.2s ease;
-    }
-
-    .cta-button:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
-    }
-
     .features{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
       margin: 60px 0;
-    }
-
-    .feature-card{
-      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 32px;
-      text-align: center;
     }
 
     .feature-icon{
@@ -189,63 +129,6 @@
       margin: 0 auto 20px;
       color: #7ceba3;
       font-size: 24px;
-    }
-
-    .feature-card h3{
-      font-size: 20px;
-      font-weight: 700;
-      margin: 0 0 12px;
-      color: #fff;
-    }
-
-    .feature-card p{
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .nav{
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .nav a{
-      color: var(--text-muted);
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .nav a:hover{
-      color: #fff;
-    }
-
-    .compare-table{
-      width: 100%;
-      border-collapse: collapse;
-      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .compare-table th, .compare-table td{
-      padding: 16px 20px;
-      text-align: left;
-      border-bottom: 1px solid var(--card-border);
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .compare-table th{
-      color: #fff;
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .compare-table tr:last-child td{
-      border-bottom: none;
     }
 
     .section-title{
@@ -266,17 +149,8 @@
 
     .body-copy p{ margin: 0 0 16px; }
 
-    footer{
-      color: var(--muted);
-      text-align:center;
-      font-size: 13px;
-      padding: 40px 16px;
-      border-top: 1px solid var(--card-border);
-      margin-top: 80px;
-    }
-
-    footer a{ color: var(--muted); }
-  </style>
+  
+</style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -292,6 +166,8 @@
       <a href="/faq/">FAQ</a>
       <a href="/local-vs-upload/">Local vs. Upload</a>
       <a href="/blog/">Blog</a>
+      <a href="/vs-decrease-pdf-size/">vs. Decrease PDF Size</a>
+      <a href="/vs-manual-compression/">vs. Manual Compression</a>
     </nav>
 
     <section class="hero">
@@ -333,6 +209,7 @@
 
     <section>
       <h2 class="section-title">Local Processing vs. Upload-Based PDF Compressors</h2>
+      <div class="compare-table-wrap">
       <table class="compare-table">
         <thead>
           <tr>
@@ -344,31 +221,32 @@
         <tbody>
           <tr>
             <td>Where processing happens</td>
-            <td>On your device, in the browser</td>
-            <td>On a remote server</td>
+            <td data-label="PDF Compressor (local)">On your device, in the browser</td>
+            <td data-label="Typical online compressor">On a remote server</td>
           </tr>
           <tr>
             <td>File leaves your computer?</td>
-            <td>No</td>
-            <td>Yes - uploaded, processed, then downloaded back</td>
+            <td data-label="PDF Compressor (local)">No</td>
+            <td data-label="Typical online compressor">Yes - uploaded, processed, then downloaded back</td>
           </tr>
           <tr>
             <td>Needs an internet connection?</td>
-            <td>No, works offline after install</td>
-            <td>Yes, for every file</td>
+            <td data-label="PDF Compressor (local)">No, works offline after install</td>
+            <td data-label="Typical online compressor">Yes, for every file</td>
           </tr>
           <tr>
             <td>Account required?</td>
-            <td>No</td>
-            <td>Varies by service</td>
+            <td data-label="PDF Compressor (local)">No</td>
+            <td data-label="Typical online compressor">Varies by service</td>
           </tr>
           <tr>
             <td>Cost</td>
-            <td>See Chrome Web Store for pricing</td>
-            <td>Varies by service</td>
+            <td data-label="PDF Compressor (local)">See Chrome Web Store for pricing</td>
+            <td data-label="Typical online compressor">Varies by service</td>
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <section>
@@ -403,6 +281,6 @@
     </section>
   </main>
 
-  <footer>© 2025 PDF Compressor - <a href="/">Home</a></footer>
+  <footer class="footer">© 2025 PDF Compressor - <a href="/">Home</a> · <a href="/vs-decrease-pdf-size/">vs. Decrease PDF Size</a> · <a href="/vs-manual-compression/">vs. Manual Compression</a></footer>
 </body>
 </html>
